@@ -42,7 +42,7 @@ const UndelegatedValueRow = ({
       return (waitingStartDate.asDays() | 0) + ' days';
     }
     const timeLeftInMiliseconds = waitingStartDate.asMilliseconds();
-    return moment.utc(timeLeftInMiliseconds).format('HH:mm:ss');
+    return moment.utc(timeLeftInMiliseconds).format('D:HH:mm:ss');
   };
   return (
     <>
