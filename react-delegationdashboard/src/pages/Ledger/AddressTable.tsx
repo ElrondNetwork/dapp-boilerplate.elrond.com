@@ -80,7 +80,7 @@ const AddressTable = ({
         },
       });
       dispatch({ type: 'loading', loading: true });
-      const hwWalletProvider = new HWProvider(dapp.proxy, selectedIndex);
+      const hwWalletProvider = new HWProvider(dapp.proxy);
       hwWalletProvider
         .init()
         .then((success: any) => {
@@ -92,7 +92,7 @@ const AddressTable = ({
           }
 
           hwWalletProvider
-            .login()
+            .login({addressIndex: selectedIndex})
             .then(address => {
               dispatch({ type: 'setProvider', provider: hwWalletProvider });
               dispatch({ type: 'login', address });
